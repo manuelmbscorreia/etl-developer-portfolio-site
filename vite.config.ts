@@ -5,13 +5,6 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-
-  base: "/etl-developer-portfolio-site/", // <--- Caminho correto para GitHub Pages
-
-  build: {
-    outDir: 'docs',  // gera build na pasta docs
-  },
-
   server: {
     host: "::",
     port: 8080,
