@@ -61,7 +61,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">Email</div>
-                  <div className="text-muted-foreground">etl.developer@email.com</div>
+                  <div className="text-muted-foreground">manuelmbscorreia@gmail.com</div>
                 </div>
                 </div>
                 
@@ -71,7 +71,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">Phone</div>
-                  <div className="text-muted-foreground">+351 912 345 678</div>
+                  <div className="text-muted-foreground">+351 967 910 307</div>
                 </div>
                 </div>
                 
@@ -95,13 +95,13 @@ const ContactSection = () => {
               <CardContent className="space-y-4">
                 <div className="flex gap-4">
                 <Button variant="outline" className="flex-1" asChild>
-                  <a href="#" target="_blank">
+                  <a href="https://www.linkedin.com/in/manuel-correia-54b752b3/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4 mr-2" />
                   LinkedIn
                   </a>
                 </Button>
                 <Button variant="outline" className="flex-1" asChild>
-                  <a href="#" target="_blank">
+                  <a href="https://github.com/manuelmbscorreia/" target="_blank">
                   <Github className="h-4 w-4 mr-2" />
                   GitHub
                   </a>

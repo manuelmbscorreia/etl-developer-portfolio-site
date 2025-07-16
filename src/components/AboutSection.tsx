@@ -40,18 +40,17 @@ const AboutSection = () => {
                   robust and efficient pipelines that process hundreds of thousands of records daily.
                 </p>
                 <p>
-                  My journey began as a Business Bachelor's student, but I quickly discovered my passion for programming
-                  while coding a VBA project during an Accounting Summer internship. 
+                  My journey began as a Business Bachelor's student when I quickly discovered my passion for programming
+                  while coding a VBA project during an accounting summer internship. 
                   Since then, I have forged a self-taught path with Python, SQL, Linux and even Cloud technologies like GCP.
                 </p>
                 <p>
                   In my most recent professional experience, I have collaborated with a leading international insurance company, 
-                  contributing to the creation, maintenance and optimization of their data processes and supporting impactful 
-                  business decisions all over the globe.
+                  contributing to the creation, maintenance and optimization of their data processes.
                 </p>
                 <p>
                   What motivates me is the ability to solve complex problems and see the direct impact 
-                  of my work on our clients. I believe that well-structured data is the 
+                  of my work with our client's satisfaction. I believe that well-structured data is the 
                   foundation for the success of any modern organization.
                 </p>
               </div>
