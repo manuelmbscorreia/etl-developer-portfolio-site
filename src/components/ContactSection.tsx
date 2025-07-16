@@ -1,20 +1,11 @@
 import { Mail, Phone, MapPin, Linkedin, Github, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I will get back to you soon.",
-    });
-  };
 
   const handleDownloadCV = () => {
     // Simular download do CV
@@ -120,66 +111,6 @@ const ContactSection = () => {
               </Card>
             </div>
             
-            {/* Contact Form */}
-            <Card className="bg-card shadow-subtle">
-              <CardHeader>
-              <CardTitle className="text-2xl font-bold text-foreground">Send Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                  Name
-                  </label>
-                  <Input 
-                  placeholder="Your name" 
-                  required 
-                  className="bg-background"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                  Email
-                  </label>
-                  <Input 
-                  type="email" 
-                  placeholder="your.email@example.com" 
-                  required 
-                  className="bg-background"
-                  />
-                </div>
-                </div>
-                
-                <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Subject
-                </label>
-                <Input 
-                  placeholder="Job Opportunity" 
-                  required 
-                  className="bg-background"
-                />
-                </div>
-                
-                <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Message
-                </label>
-                <Textarea 
-                  placeholder="Describe your project or opportunity..."
-                  className="min-h-[120px] bg-background"
-                  required
-                />
-                </div>
-                
-                <Button type="submit" size="lg" className="w-full">
-                <Mail className="h-5 w-5 mr-2" />
-                Send Message
-                </Button>
-              </form>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
