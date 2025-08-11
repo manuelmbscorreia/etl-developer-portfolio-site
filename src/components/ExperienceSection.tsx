@@ -4,39 +4,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const ExperienceSection = () => {
   const experiences = [
     {
-      title: "Senior ETL Developer",
-      company: "TechData Solutions",
+      title: "ETL Informatica PowerCenter Developer",
+      company: "Aubay",
       location: "Lisboa, Portugal",
-      period: "2021 - Presente",
+      period: "2022 - Present",
       description: [
-        "Desenvolvimento de pipelines ETL complexos para processamento de dados de múltiplas fontes",
-        "Implementação de soluções de Data Warehousing usando SQL Server e Azure",
-        "Otimização de performance de queries SQL, resultando em 40% de redução no tempo de processamento",
-        "Liderança técnica de equipe de 4 desenvolvedores ETL"
-      ]
-    },
-    {
-      title: "ETL Developer",
-      company: "DataFlow Analytics",
-      location: "Porto, Portugal", 
-      period: "2019 - 2021",
-      description: [
-        "Criação de processos ETL para integração de sistemas CRM e ERP",
-        "Desenvolvimento de scripts Python para automação de tarefas de dados",
-        "Implementação de controles de qualidade de dados e monitorização",
-        "Migração de dados legados para novas arquitecturas cloud"
-      ]
-    },
-    {
-      title: "Junior Data Developer",
-      company: "InfoSystems Ltd",
-      location: "Coimbra, Portugal",
-      period: "2018 - 2019", 
-      description: [
-        "Desenvolvimento de relatórios e dashboards em Power BI",
-        "Criação de stored procedures e funções SQL",
-        "Suporte na manutenção de bases de dados PostgreSQL e MySQL",
-        "Participação em projetos de Business Intelligence"
+        "ETL & Data Engineering for Global Operations: Designed, developed, and optimized ETL processes using Informatica PowerCenter to integrate and transform large datasets efficiently. Ensured compliance with business requirements, continuously updating existing processes to meet evolving needs. Worked with teams across France, China, United Kingdom, Ireland, Switzerland, Spain, etc.",
+        "Scripting & Process Automation: Created and maintained Korn Shell scripts to automate tasks, improving workflow efficiency and system performance. Maintained scripts to automate Excel VBA reporting, reducing manual work. And developed SQL queries to automate monthly reports.",
+        "Incident Management & Troubleshooting: Led critical incident resolution efforts, quickly identifying root causes and implementing solutions to minimize downtime.",
+        "Documentation & Knowledge Sharing: Developed comprehensive documentation for ETL processes, enabling efficient knowledge transfer and future system maintenance.",
+        "Cloud & On-Premises Data Transfers: Managed and optimized server connections across multiple machines, ensuring minimal incidents in data transfer. Using technologies like UDM with AWS and Azure.",
+        "Quality Assurance & Testing: Conducted rigorous testing to identify and resolve potential bugs before deployment. Colaborated with external teams to define testing requirements and deliver error-free solutions.",
+        "Monitoring of Informatica PowerCenter Processes: Regularly monitored Informatica PowerCenter ETL processes to ensure smooth data flow, identifying potential bottlenecks, optimizing performance, and ensuring data quality across multiple platforms.",
+        "Testing of ETL Applications: Participated in the end-to-end testing of ETL applications to ensure data transformation processes were functioning as expected.",
+        "Training and Skill Enhancement: Completed around 300 hours of targeted training to deepen expertise in key technologies such as Informatica PowerCenter, UNIX, and scripting, as well as enhancing problem-solving skills and gaining a broader understanding of data integration best practices."
       ]
     }
   ];
@@ -46,9 +27,9 @@ const ExperienceSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">Experiência Profissional</h2>
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Professional Experience</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Histórico de sucesso em desenvolvimento ETL e soluções de dados
+              Track record of success in ETL development and data solutions
             </p>
           </div>
           

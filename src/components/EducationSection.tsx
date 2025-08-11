@@ -4,45 +4,51 @@ import { GraduationCap, Calendar, MapPin } from "lucide-react";
 
 const EducationSection = () => {
   const education = [
-    {
-      degree: "Mestrado em Engenharia Informática",
-      specialization: "Sistemas de Informação e Data Science",
-      institution: "Universidade do Porto",
-      location: "Porto, Portugal",
-      period: "2019 - 2021",
-      description: "Especialização em arquiteturas de dados, machine learning e desenvolvimento de sistemas distribuídos. Dissertação focada em otimização de pipelines ETL para big data.",
-      highlights: ["Big Data Analytics", "Machine Learning", "Distributed Systems", "Data Mining"]
+   {
+      degree: "Postgraduate Diploma in Computer Engineering",
+      specialization: "Computer Engineering",
+      institution: "University of Évora",
+      location: "Remote, Portugal",
+      period: "2021 - 2024",
+      description:
+        "The Master's in Computer Engineering at the University of Évora provides advanced training in software development, distributed systems, artificial intelligence, databases, and systems engineering. The program prepares professionals to design, implement, and manage innovative technological solutions.",
+      highlights: [
+        "Software Development",
+        "Artificial Intelligence",
+        "Databases",
+        "Data Warehousing",
+        "Systems Engineering",
+        "Python Programming",
+        "Data Mining"
+      ]
     },
     {
-      degree: "Licenciatura em Engenharia Informática",
-      specialization: "Sistemas de Informação",
-      institution: "Instituto Superior de Engenharia do Porto",
-      location: "Porto, Portugal", 
-      period: "2015 - 2019",
-      description: "Formação sólida em programação, bases de dados, algoritmos e estruturas de dados. Projeto final desenvolvido em Python para análise de dados financeiros.",
-      highlights: ["Programação", "Bases de Dados", "Algoritmos", "Desenvolvimento Web"]
+      degree: "Bachelor's Degree in Business",
+      specialization: "Finance",
+      institution: "Universidade de Évora",
+      location: "Évora, Portugal", 
+      period: "2018 - 2021",
+      description: "Comprehensive training in management, economics, accounting, and finance, with a strong focus on analytical and decision-making skills. Final project involved developing a business strategy for a real-world company.",
+      highlights: [
+        "Financial Analysis",
+        "Strategic Planning",
+        "Business Communication",
+        "Project Management",
+        "Leadership",
+        "Problem Solving",
+        "Teamwork",
+        "Critical Thinking"
+      ]
     }
   ];
 
   const certifications = [
     {
-      name: "Microsoft Certified: Azure Data Engineer Associate",
-      issuer: "Microsoft",
-      year: "2023",
-      credentialId: "AZ-104-2023"
+      name: "Learning Path - Cloud",
+      issuer: "Aubay",
+      year: "2025",
+      credentialId: "None"
     },
-    {
-      name: "AWS Certified Data Analytics - Specialty",
-      issuer: "Amazon Web Services",
-      year: "2022",
-      credentialId: "AWS-DAS-2022"
-    },
-    {
-      name: "Snowflake SnowPro Core Certification",
-      issuer: "Snowflake",
-      year: "2022",
-      credentialId: "SNOW-CORE-2022"
-    }
   ];
 
   return (
@@ -51,11 +57,10 @@ const EducationSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Educação
+              Education
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Formação académica e certificações profissionais que fundamentam 
-              a minha expertise em engenharia de dados.
+              Academic background and professional certifications that underpin my expertise in data engineering.
             </p>
           </div>
 
@@ -64,7 +69,7 @@ const EducationSection = () => {
             <div>
               <h3 className="text-2xl font-semibold text-foreground mb-8 flex items-center gap-3">
                 <GraduationCap className="h-6 w-6 text-primary" />
-                Formação Académica
+                Academic Background
               </h3>
               
               <div className="space-y-6">
@@ -117,7 +122,7 @@ const EducationSection = () => {
             <div>
               <h3 className="text-2xl font-semibold text-foreground mb-8 flex items-center gap-3">
                 <Badge className="h-6 w-6 text-primary bg-transparent p-0" />
-                Certificações Profissionais
+                Professional Certifications
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
