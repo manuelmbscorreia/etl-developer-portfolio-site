@@ -66,14 +66,16 @@ const ExperienceSection = () => {
                       return (
                         <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
                           <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                          {hasColon ? (
-                            <>
-                              <span className="font-bold">{item.substring(0, colonIndex + 1)}</span>
-                              {item.substring(colonIndex + 1)}
-                            </>
-                          ) : (
-                            item
-                          )}
+                          <span>
+                            {hasColon ? (
+                              <>
+                                <span className="font-bold">{item.substring(0, colonIndex + 1)}</span>
+                                <span>{item.substring(colonIndex + 1)}</span>
+                              </>
+                            ) : (
+                              item
+                            )}
+                          </span>
                         </li>
                       );
                     })}
