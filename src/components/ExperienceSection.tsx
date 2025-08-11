@@ -59,12 +59,24 @@ const ExperienceSection = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {exp.description.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
-                        <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        {item}
-                      </li>
-                    ))}
+                    {exp.description.map((item, itemIndex) => {
+                      const colonIndex = item.indexOf(':');
+                      const hasColon = colonIndex !== -1;
+                      
+                      return (
+                        <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
+                          <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                          {hasColon ? (
+                            <>
+                              <span className="font-bold">{item.substring(0, colonIndex + 1)}</span>
+                              {item.substring(colonIndex + 1)}
+                            </>
+                          ) : (
+                            item
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </CardContent>
               </Card>
