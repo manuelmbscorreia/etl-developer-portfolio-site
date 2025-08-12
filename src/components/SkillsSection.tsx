@@ -17,22 +17,22 @@ const SkillsSection = () => {
     {
       title: "Cloud & DevOps",
       icon: Cloud,
-      skills: ["Azure", "AWS", "Docker", "Kubernetes", "Jenkins", "Git", "Terraform", "Azure Data Factory"]
+      skills: ["Informatica PowerCenter", "AWS", "Docker", "Kubernetes", "Jenkins", "Git", "Terraform", "Azure Data Factory"]
     },
     {
       title: "Ferramentas ETL & BI",
       icon: BarChart,
-      skills: ["SSIS", "Talend", "Informatica", "Apache Airflow", "Power BI", "Tableau", "Apache Spark", "Hadoop"]
+      skills: ["UNIX", "Talend", "Informatica", "Korn Shell Scripting", "Excel", "Tableau", "Apache Spark", "Hadoop"]
     }
   ];
 
   const proficiencyLevels = [
-    { name: "Python", level: 95 },
-    { name: "SQL", level: 98 },
-    { name: "Azure", level: 85 },
-    { name: "SSIS", level: 90 },
-    { name: "Power BI", level: 88 },
-    { name: "Apache Airflow", level: 82 }
+    { name: "Python", level: 50 },
+    { name: "SQL", level: 60 },
+    { name: "Informatica PowerCenter", level: 80 },
+    { name: "UNIX", level: 70 },
+    { name: "Excel", level: 85 },
+    { name: "Korn Shell Scripting", level: 75 }
   ];
 
   return (
@@ -69,7 +69,7 @@ const SkillsSection = () => {
           </div>
 
           <div className="bg-card rounded-lg p-8 shadow-subtle">
-            <h3 className="text-2xl font-bold mb-8 text-center text-foreground">Nível de Proficiência</h3>
+            <h3 className="text-2xl font-bold mb-8 text-center text-foreground">Proficiency Level</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {proficiencyLevels.map((skill, index) => (
                 <div key={index} className="space-y-2">
