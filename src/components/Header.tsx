@@ -21,37 +21,37 @@ const Header = () => {
               onClick={() => scrollToSection('about')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Sobre
+              About
             </button>
             <button 
               onClick={() => scrollToSection('experience')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Experiência
+              Experience
             </button>
             <button 
               onClick={() => scrollToSection('projects')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Projetos
+              Projects
             </button>
             <button 
               onClick={() => scrollToSection('skills')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Competências
+              Skills
             </button>
             <button 
               onClick={() => scrollToSection('educacao')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Educação
+              Education
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Contacto
+              Contact
             </button>
           </div>
 
@@ -62,7 +62,7 @@ const Header = () => {
               onClick={() => scrollToSection('contact')}
             >
               <Mail className="h-4 w-4 mr-2" />
-              Contactar
+              Contact
             </Button>
             <Button 
               size="sm"
