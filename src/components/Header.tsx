@@ -55,29 +55,6 @@ const Header = () => {
             </button>
           </div>
 
-          <div className="flex items-center space-x-3">
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={() => scrollToSection('contact')}
-            >
-              <Mail className="h-4 w-4 mr-2" />
-              Contact
-            </Button>
-            <Button 
-              size="sm"
-              onClick={() => {
-                // Simular download do CV
-                const link = document.createElement('a');
-                link.href = '#';
-                link.download = 'CV_ETL_Developer.pdf';
-                link.click();
-              }}
-            >
-              <Download className="h-4 w-4 mr-2" />
-              Download CV
-            </Button>
-          </div>
         </nav>
       </div>
     </header>
