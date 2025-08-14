@@ -26,7 +26,7 @@ const HeroSection = () => {
             ETL Developer
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
             Specialist in <span className="text-primary font-semibold">Extract, Transform and Load</span> with broad experience 
             in communication with clients, following the entire lifecycle of products, Informatica PowerCenter workflow 
             and mapping creation, and engineering solutions with Korn Shell scripting and UNIX.
