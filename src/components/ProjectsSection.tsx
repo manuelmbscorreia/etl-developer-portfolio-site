@@ -7,21 +7,21 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "Data Pipeline Automation",
-      description: "Pipeline ETL automatizado para processar dados de vendas em tempo real, integrando múltiplas fontes de dados e fornecendo insights através de dashboards interativos.",
+      description: "Automated ETL pipeline for processing real-time sales data, integrating multiple data sources and providing insights through interactive dashboards.",
       technologies: ["Python", "Apache Airflow", "PostgreSQL", "Docker", "Power BI"],
       githubUrl: "#",
       liveUrl: "#"
     },
     {
       title: "Data Warehouse Migration",
-      description: "Migração completa de data warehouse legacy para arquitetura moderna na cloud, melhorando performance em 300% e reduzindo custos operacionais.",
+      description: "Complete migration of legacy data warehouse to modern cloud architecture, improving performance by 300% and reducing operational costs.",
       technologies: ["SQL Server", "Azure", "Snowflake", "Python", "Terraform"],
       githubUrl: "#",
       liveUrl: "#"
     },
     {
       title: "Real-time Analytics Platform",
-      description: "Plataforma de analytics em tempo real para e-commerce, processando milhões de eventos diários e fornecendo insights instantâneos para decisões de negócio.",
+      description: "Real-time analytics platform for e-commerce, processing millions of daily events and providing instant insights for business decisions.",
       technologies: ["Apache Kafka", "Spark", "Elasticsearch", "Kibana", "Python"],
       githubUrl: "#",
       liveUrl: "#"
@@ -29,16 +29,16 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projetos" className="py-20 bg-section">
+    <section id="projects" className="py-20 bg-section">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Projetos
+              Projects
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Alguns dos projetos mais significativos que desenvolvi, demonstrando expertise em ETL, 
-              data engineering e analytics.
+              Some of the most significant projects I've developed, demonstrating expertise in ETL, 
+              data engineering and analytics.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ const ProjectsSection = () => {
                       onClick={() => window.open(project.githubUrl, '_blank')}
                     >
                       <Github className="h-4 w-4" />
-                      Código
+                      Code
                     </Button>
                     <Button 
                       variant="secondary" 

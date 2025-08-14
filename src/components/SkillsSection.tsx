@@ -5,12 +5,12 @@ import { Badge } from "@/components/ui/badge";
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: "Linguagens de Programação",
+      title: "Programming Languages",
       icon: Code,
       skills: ["Python", "SQL", "Java", "C#", ".NET", "PowerShell", "R", "Scala"]
     },
     {
-      title: "Bases de Dados",
+      title: "Databases",
       icon: Database,
       skills: ["SQL Server", "PostgreSQL", "MySQL", "Oracle", "MongoDB", "Cassandra", "Redis", "Snowflake"]
     },
@@ -20,7 +20,7 @@ const SkillsSection = () => {
       skills: ["Informatica PowerCenter", "AWS", "Docker", "Kubernetes", "Jenkins", "Git", "Terraform", "Azure Data Factory"]
     },
     {
-      title: "Ferramentas ETL & BI",
+      title: "ETL & BI Tools",
       icon: BarChart,
       skills: ["UNIX", "Talend", "Informatica", "Korn Shell Scripting", "Excel", "Tableau", "Apache Spark", "Hadoop"]
     }
@@ -40,9 +40,9 @@ const SkillsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">Competências Técnicas</h2>
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Technical Competencies</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Tecnologias e ferramentas que domino para criar soluções ETL robustas
+              Technologies and tools I master to create robust ETL solutions
             </p>
           </div>
           
