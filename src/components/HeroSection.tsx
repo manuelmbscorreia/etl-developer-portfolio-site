@@ -29,7 +29,7 @@ const HeroSection = () => {
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
             Specialist in <span className="text-primary font-semibold">Extract, Transform and Load</span> with broad experience 
             in communication with clients, following the entire lifecycle of products, Informatica PowerCenter workflow 
-            and mapping creation, and engineering solutions with Korn shell and UNIX.
+            and mapping creation, and engineering solutions with Ksh and UNIX.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
