@@ -27,32 +27,33 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Especialista em <span className="text-primary font-semibold">Extract, Transform, Load</span> com vasta experiência 
-            em arquiteturas de dados, pipelines robustos e soluções escaláveis para processamento de big data.
+            Specialist in <span className="text-primary font-semibold">Extract, Transform and Load</span> with broad experience 
+            in communication with clients, following the entire lifecycle of products, Informatica PowerCenter workflow 
+            and mapping creation, and engineering solutions with Korn shell and UNIX.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button size="lg" onClick={scrollToContact} className="min-w-[200px]">
               <TrendingUp className="h-5 w-5 mr-2" />
-              Vamos Conversar
+              Let's Talk
             </Button>
             <Button variant="outline" size="lg" className="min-w-[200px]">
-              Ver Projetos
+              View Projects
             </Button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <div className="bg-card rounded-lg p-6 shadow-subtle">
               <div className="text-3xl font-bold text-primary mb-2">5+</div>
-              <div className="text-muted-foreground">Anos de Experiência</div>
+              <div className="text-muted-foreground">Years of Experience</div>
             </div>
             <div className="bg-card rounded-lg p-6 shadow-subtle">
               <div className="text-3xl font-bold text-primary mb-2">50+</div>
-              <div className="text-muted-foreground">Projetos ETL</div>
+              <div className="text-muted-foreground">ETL Projects</div>
             </div>
             <div className="bg-card rounded-lg p-6 shadow-subtle">
               <div className="text-3xl font-bold text-primary mb-2">10+</div>
-              <div className="text-muted-foreground">Tecnologias</div>
+              <div className="text-muted-foreground">Technologies</div>
             </div>
           </div>
         </div>
