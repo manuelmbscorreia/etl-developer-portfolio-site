@@ -111,6 +111,16 @@ const ContactSection = () => {
               </Card>
             </div>
             
+            {/* Profile Image */}
+            <div className="flex items-center justify-center">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/d06e209f-efd9-4eb6-90e6-58f0e59d9c99.png" 
+                  alt="Manuel Correia - Professional Profile" 
+                  className="w-80 h-80 object-cover rounded-2xl shadow-elegant"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
