@@ -1,4 +1,4 @@
-import { Database, Code, Cloud, BarChart } from "lucide-react";
+import { Database, Code, Handshake } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -15,8 +15,8 @@ const SkillsSection = () => {
       skills: ["Excel", "Informatica PowerCenter", "UNIX", "Putty", "WinSCP", "Oracle SQL Developer", "Citrix", "ServiceNow", "UDM (with Azure and AWS)", "Outlook"]
     },
     {
-      title: "Experience with",
-      icon: Cloud,
+      title: "Other Skills",
+      icon: Handshake,
       skills: ["Communication in English (A1)", "Worldwide Context", "Cross-Team Collaboration", "Agile Methodology"]
     }
   ];
@@ -51,7 +51,7 @@ const SkillsSection = () => {
                   <CardTitle className="text-lg font-semibold text-foreground">{category.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {category.skills.map((skill, skillIndex) => (
                       <Badge key={skillIndex} variant="secondary" className="text-xs">
                         {skill}
