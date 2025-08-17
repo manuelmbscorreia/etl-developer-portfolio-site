@@ -7,22 +7,17 @@ const SkillsSection = () => {
     {
       title: "Programming Languages",
       icon: Code,
-      skills: ["Python", "SQL", "Java", "C#", ".NET", "PowerShell", "R", "Scala"]
+      skills: ["Python", "SQL", "Korn Shell", "VBA"]
     },
     {
-      title: "Databases",
+      title: "Software",
       icon: Database,
-      skills: ["SQL Server", "PostgreSQL", "MySQL", "Oracle", "MongoDB", "Cassandra", "Redis", "Snowflake"]
+      skills: ["Excel", "Informatica PowerCenter", "UNIX", "Putty", "WinSCP", "Oracle SQL Developer", "Citrix", "ServiceNow", "UDM (with Azure and AWS)", "Outlook"]
     },
     {
-      title: "Cloud & DevOps",
+      title: "Experience with",
       icon: Cloud,
-      skills: ["Informatica PowerCenter", "AWS", "Docker", "Kubernetes", "Jenkins", "Git", "Terraform", "Azure Data Factory"]
-    },
-    {
-      title: "ETL & BI Tools",
-      icon: BarChart,
-      skills: ["UNIX", "Talend", "Informatica", "Korn Shell Scripting", "Excel", "Tableau", "Apache Spark", "Hadoop"]
+      skills: ["Communication in English (A1)", "Worldwide Context", "Cross-Team Collaboration", "Agile Methodology"]
     }
   ];
 
@@ -46,7 +41,7 @@ const SkillsSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {skillCategories.map((category, index) => (
               <Card key={index} className="bg-card shadow-subtle hover:shadow-elegant transition-all duration-300">
                 <CardHeader className="text-center">
