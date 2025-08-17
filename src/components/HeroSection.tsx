@@ -24,9 +24,10 @@ const HeroSection = () => {
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
             Manuel Correia
-            <br />
-            <span className="text-primary">ETL Developer</span>
           </h1>
+          <p className="text-2xl md:text-3xl font-semibold text-primary mb-6">
+            ETL Developer
+          </p>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed text-justify">
             Specialist in <span className="text-primary font-semibold">Extract, Transform and Load</span> with broad experience 
