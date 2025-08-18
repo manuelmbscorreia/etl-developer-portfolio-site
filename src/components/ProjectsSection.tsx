@@ -34,11 +34,11 @@ const ProjectsSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Responsibilities
+              Main Responsibilities
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Some of the most significant roles I've practiced, demonstrating expertise in ETL, 
-              data engineering and incident resolution.
+              Support Engineering and Incident Resolution.
             </p>
           </div>
 
