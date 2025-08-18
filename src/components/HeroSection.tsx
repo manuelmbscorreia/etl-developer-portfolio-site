@@ -47,12 +47,12 @@ const HeroSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <div className="bg-card rounded-lg p-6 shadow-subtle">
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
+              <div className="text-3xl font-bold text-primary mb-2">3+</div>
               <div className="text-muted-foreground">Years of Experience</div>
             </div>
             <div className="bg-card rounded-lg p-6 shadow-subtle">
-              <div className="text-3xl font-bold text-primary mb-2">50+</div>
-              <div className="text-muted-foreground">ETL Projects</div>
+              <div className="text-3xl font-bold text-primary mb-2">15+</div>
+              <div className="text-muted-foreground">Projects</div>
             </div>
             <div className="bg-card rounded-lg p-6 shadow-subtle">
               <div className="text-3xl font-bold text-primary mb-2">10+</div>
