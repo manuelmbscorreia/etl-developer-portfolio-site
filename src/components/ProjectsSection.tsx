@@ -1,30 +1,22 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Data Pipeline Automation",
-      description: "Automated ETL pipeline for processing real-time sales data, integrating multiple data sources and providing insights through interactive dashboards.",
-      technologies: ["Python", "Apache Airflow", "PostgreSQL", "Docker", "Power BI"],
-      githubUrl: "#",
-      liveUrl: "#"
+      title: "Monitoring of ETL Applications",
+      description: "Keeping a constant engagement with clients to respond to business needs. Communication is the key, technical abilties come in second, despite being fundamental to understand how each project work.",
+      technologies: ["TWS", "Excel VBA", "English (A1)", "Outlook", "SQL"]
     },
     {
-      title: "Data Warehouse Migration",
-      description: "Complete migration of legacy data warehouse to modern cloud architecture, improving performance by 300% and reducing operational costs.",
-      technologies: ["SQL Server", "Azure", "Snowflake", "Python", "Terraform"],
-      githubUrl: "#",
-      liveUrl: "#"
+      title: "Development of ETL Processes",
+      description: "Discussion of specifications, communicating the technology's limits, developing with precision and testing with rigor.",
+      technologies: ["Informatica PowerCenter", "UNIX", "Korn Shell", "Oracle SQL Developer"]
     },
     {
-      title: "Real-time Analytics Platform",
-      description: "Real-time analytics platform for e-commerce, processing millions of daily events and providing instant insights for business decisions.",
-      technologies: ["Apache Kafka", "Spark", "Elasticsearch", "Kibana", "Python"],
-      githubUrl: "#",
-      liveUrl: "#"
+      title: "Creation of UDM and sFTP Transfers",
+      description: "A bridge between OPS Team and the Business, organization and request of transfer settings, information and requirements to allow feasible movement of files between different machines.",
+      technologies: ["UDM"]
     }
   ];
 
@@ -62,26 +54,6 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                   
-                  <div className="flex gap-3">
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="flex items-center gap-2"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                    >
-                      <Github className="h-4 w-4" />
-                      Code
-                    </Button>
-                    <Button 
-                      variant="secondary" 
-                      size="sm" 
-                      className="flex items-center gap-2"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      Demo
-                    </Button>
-                  </div>
                 </CardContent>
               </Card>
             ))}
