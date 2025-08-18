@@ -37,7 +37,7 @@ const ProjectsSection = () => {
               Main Responsibilities
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Some of the most significant roles I've practiced, demonstrating expertise in ETL, 
+              Some of the most significant roles I've practiced, demonstrating expertise in ETL Development, 
               Support Engineering and Incident Resolution.
             </p>
           </div>
