@@ -17,6 +17,11 @@ const ProjectsSection = () => {
       title: "Creation of UDM and sFTP Transfers",
       description: "A bridge between OPS Team and the Business, organization and request of transfer settings, information and requirements to allow feasible movement of files between different machines.",
       technologies: ["UDM"]
+    },
+    {
+      title: "Incident Management",
+      description: "Swift action to solve process errors in Production. Clear and goal-oriented communication is essential expertise in the context of the team's technical needs.",
+      technologies: ["TWS", "Excel VBA", "English (B2)", "Outlook", "Excel", "SQL", "Oracle SQL Developer", "Informatica PowerCenter", "Korn Shell", "UNIX"]
     }
   ];
 
