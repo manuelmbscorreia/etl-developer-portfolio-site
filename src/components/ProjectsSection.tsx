@@ -6,7 +6,7 @@ const ProjectsSection = () => {
     {
       title: "Monitoring of ETL Applications",
       description: "Keeping a constant engagement with clients to respond to business needs. Communication is the key, technical abilties come in second, despite being fundamental to understand how each project work.",
-      technologies: ["TWS", "Excel VBA", "English (A1)", "Outlook", "SQL"]
+      technologies: ["TWS", "Excel VBA", "English (B2)", "Outlook", "SQL"]
     },
     {
       title: "Development of ETL Processes",
