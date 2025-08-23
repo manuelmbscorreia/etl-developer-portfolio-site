@@ -20,7 +20,7 @@ const ProjectsSection = () => {
     },
     {
       title: "Incident Management",
-      description: "Swift action to solve process errors in Production. Clear and goal-oriented communication is essential expertise in the context of the team's technical needs.",
+      description: "Swift action to solve process errors in Production. Clear and goal-oriented communication is essential as the expertise in the context of the team's technical needs.",
       technologies: ["TWS", "Excel VBA", "English (B2)", "Outlook", "Excel", "SQL", "Oracle SQL Developer", "Informatica PowerCenter", "Korn Shell", "UNIX"]
     }
   ];
@@ -39,10 +39,10 @@ const ProjectsSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="bg-card shadow-subtle hover:shadow-elegant transition-all duration-300 group">
-                <CardHeader>
+                <CardHeader className="text-center">
                   <CardTitle className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </CardTitle>
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {project.technologies.map((tech, techIndex) => (
                       <Badge key={techIndex} variant="secondary" className="text-xs">
                         {tech}
