@@ -17,7 +17,7 @@ const SkillsSection = () => {
     {
       title: "Other Skills",
       icon: Handshake,
-      skills: ["Communication in English (A1)", "Worldwide Context", "Cross-Team Collaboration", "Agile Methodology"]
+      skills: ["Communication in English (B2)", "Worldwide Context", "Cross-Team Collaboration", "Agile Methodology"]
     }
   ];
 
