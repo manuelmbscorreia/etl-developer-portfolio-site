@@ -16,7 +16,7 @@ const ProjectsSection = () => {
     {
       title: "Creation of UDM and sFTP Transfers",
       description: "A bridge between OPS Team and the Business, organization and request of transfer settings, information and requirements to allow feasible movement of files between different machines.",
-      technologies: ["UDM"]
+      technologies: ["UDM", "WinSCP"]
     },
     {
       title: "Incident Management",
