@@ -110,4 +110,98 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+  }
+}
+
+/* N8N Chat Widget Styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Botão flutuante */
+#chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* Caixa do chat */
+#chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  height: 420px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+#chat-header {
+  background:#007bff;
+  color:white;
+  padding:12px;
+  font-weight:bold;
+}
+
+#chat-messages {
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+  font-size: 14px;
+}
+
+#chat-messages p {
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.user {
+  background: #e6f0ff;
+  align-self: flex-end;
+}
+
+.bot {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+
+#chat-input-container {
+  display:flex;
+  border-top:1px solid #ddd;
+}
+
+#chat-input {
+  flex:1;
+  border:none;
+  padding:10px;
+  outline:none;
+  font-size:14px;
+}
+
+#chat-send {
+  background:#007bff;
+  color:white;
+  border:none;
+  padding:10px 15px;
+  cursor:pointer;
 }
