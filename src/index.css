@@ -110,7 +110,6 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
-  }
 }
 
 /* N8N Chat Widget Styles */
