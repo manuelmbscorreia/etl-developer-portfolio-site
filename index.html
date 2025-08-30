@@ -17,170 +17,28 @@
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     <link rel="icon" href="/etl-developer-portfolio-site/favicon.ico" />
 
-
-      <style>
-      /* === Chat Widget Styles === */
-      #chat-widget {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 300px;
-        height: 400px;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        font-family: Arial, sans-serif;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        overflow: hidden;
-        z-index: 9999;
-      }
-      #chat-messages {
-        flex: 1;
-        padding: 10px;
-        overflow-y: auto;
-      }
-      #chat-input {
-        display: flex;
-        border-top: 1px solid #ddd;
-      }
-      #chat-input input {
-        flex: 1;
-        border: none;
-        padding: 10px;
-        outline: none;
-      }
-      #chat-input button {
-        border: none;
-        background: #4a90e2;
-        color: white;
-        padding: 10px 15px;
-        cursor: pointer;
-      }
-      .message {
-        margin-bottom: 8px;
-      }
-      .message.user {
-        text-align: right;
-        color: #333;
-      }
-      .message.bot {
-        text-align: left;
-        color: #4a90e2;
-      }
-    </style>
-    
-    
   </head>
 
   <body>
       <div id="root"></div>
       <script type="module" src="./src/main.tsx"></script>
   
-      <!-- === Chat Widget HTML === -->
-    <div id="chat-widget">
-      <div id="chat-messages"></div>
-      <div id="chat-input">
-        <input type="text" id="chat-text" placeholder="Type a message..." />
-        <button id="send-btn">Send</button>
+      <!-- Botão flutuante -->
+      <div id="chat-button">💬</div>
+    
+      <!-- Caixa do chat -->
+      <div id="chat-box">
+        <div id="chat-header">Chat Bot</div>
+        <div id="chat-messages">
+          <p class="bot"><i>Olá! Sou o teu assistente 🤖</i></p>
+        </div>
+        <div id="chat-input-container">
+          <input id="chat-input" type="text" placeholder="Escreve uma mensagem...">
+          <button id="chat-send">Enviar</button>
+        </div>
       </div>
-    </div>
-  
-    <script>
-      // === Chat Widget JS ===
-      const sendBtn = document.getElementById('send-btn');
-      const input = document.getElementById('chat-text');
-      const messages = document.getElementById('chat-messages');
-  
-      async function sendMessage() {
-        const text = input.value.trim();
-        if (!text) return;
-  
-        // Add user message
-        messages.innerHTML += `<div class="message user">${text}</div>`;
-        input.value = "";
-  
-        try {
-          // Call your n8n webhook (update with your public URL!)
-          const res = await fetch("https://n8n.manuelcorreia.site/webhook/b4c9bc5f-9adb-47a2-b32a-7210f1394659/chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: text })
-          });
-          const data = await res.json();
-  
-          // Show bot response
-          messages.innerHTML += `<div class="message bot">${data.reply || "No response"}</div>`;
-          messages.scrollTop = messages.scrollHeight;
-        } catch (err) {
-          messages.innerHTML += `<div class="message bot">⚠️ Error: ${err.message}</div>`;
-        }
-      }
-  
-      sendBtn.addEventListener('click', sendMessage);
-      input.addEventListener('keypress', (e) => {
-        if (e.key === "Enter") sendMessage();
-      });
-    </script>
-
-        <!-- Floating Chat Button -->
-    <div id="chat-button" 
-         style="position: fixed; bottom: 20px; right: 20px; 
-                background-color: #007bff; color: white; 
-                border-radius: 50%; width: 60px; height: 60px; 
-                display: flex; justify-content: center; align-items: center; 
-                font-size: 28px; cursor: pointer; box-shadow: 0px 4px 8px rgba(0,0,0,0.2);">
-    💬
-    </div>
     
-    <!-- Hidden Chat Window -->
-    <div id="chat-box" 
-         style="position: fixed; bottom: 90px; right: 20px; 
-                width: 300px; height: 400px; 
-                background: white; border: 1px solid #ddd; 
-                border-radius: 10px; box-shadow: 0px 4px 12px rgba(0,0,0,0.3); 
-                display: none; flex-direction: column;">
-        
-        <div style="background:#007bff; color:white; padding:10px; 
-                    border-radius:10px 10px 0 0; font-weight:bold;">
-            Chat
-        </div>
-        <div id="chat-messages" style="flex:1; padding:10px; overflow-y:auto;">
-            <p><i>No messages yet...</i></p>
-        </div>
-        <div style="display:flex; border-top:1px solid #ddd;">
-            <input id="chat-input" type="text" placeholder="Type a message..." 
-                   style="flex:1; border:none; padding:10px; outline:none;">
-            <button id="chat-send" style="background:#007bff; color:white; border:none; 
-                                          padding:10px 15px; cursor:pointer;">Send</button>
-        </div>
-    </div>
-    
-    <script>
-        const chatBtn = document.getElementById("chat-button");
-        const chatBox = document.getElementById("chat-box");
-        const chatSend = document.getElementById("chat-send");
-        const chatInput = document.getElementById("chat-input");
-        const chatMessages = document.getElementById("chat-messages");
-    
-        chatBtn.onclick = () => {
-            chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "flex" : "none";
-        };
-    
-        chatSend.onclick = () => {
-            const msg = chatInput.value.trim();
-            if(msg){
-                const p = document.createElement("p");
-                p.textContent = "You: " + msg;
-                chatMessages.appendChild(p);
-                chatInput.value = "";
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-        };
-    </script>
-
-    
+      <script src="chat.js"></script> <!-- JS separado -->
     
   </body>
 </html>
