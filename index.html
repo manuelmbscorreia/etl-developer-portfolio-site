@@ -23,22 +23,14 @@
       <div id="root"></div>
       <script type="module" src="./src/main.tsx"></script>
   
-      <!-- Botão flutuante -->
-      <div id="chat-button">💬</div>
-    
-      <!-- Caixa do chat -->
-      <div id="chat-box">
-        <div id="chat-header">Chat Bot</div>
-        <div id="chat-messages">
-          <p class="bot"><i>Olá! Sou o teu assistente 🤖</i></p>
-        </div>
-        <div id="chat-input-container">
-          <input id="chat-input" type="text" placeholder="Escreve uma mensagem...">
-          <button id="chat-send">Enviar</button>
-        </div>
-      </div>
-    
-      <script src="chat.js"></script> <!-- JS separado -->
+      <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+      <script type="module">
+      	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+      
+      	createChat({
+      		webhookUrl: 'https://n8n.manuelcorreia.site/webhook/b4c9bc5f-9adb-47a2-b32a-7210f1394659/chat'
+      	});
+      </script>
     
   </body>
 </html>
