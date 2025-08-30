@@ -16,10 +16,113 @@
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     <link rel="icon" href="/etl-developer-portfolio-site/favicon.ico" />
+
+
+      <style>
+      /* === Chat Widget Styles === */
+      #chat-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 300px;
+        height: 400px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        overflow: hidden;
+        z-index: 9999;
+      }
+      #chat-messages {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+      }
+      #chat-input {
+        display: flex;
+        border-top: 1px solid #ddd;
+      }
+      #chat-input input {
+        flex: 1;
+        border: none;
+        padding: 10px;
+        outline: none;
+      }
+      #chat-input button {
+        border: none;
+        background: #4a90e2;
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      .message {
+        margin-bottom: 8px;
+      }
+      .message.user {
+        text-align: right;
+        color: #333;
+      }
+      .message.bot {
+        text-align: left;
+        color: #4a90e2;
+      }
+    </style>
+    
+    
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
+      <div id="root"></div>
+      <script type="module" src="./src/main.tsx"></script>
+  
+      <!-- === Chat Widget HTML === -->
+    <div id="chat-widget">
+      <div id="chat-messages"></div>
+      <div id="chat-input">
+        <input type="text" id="chat-text" placeholder="Type a message..." />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+  
+    <script>
+      // === Chat Widget JS ===
+      const sendBtn = document.getElementById('send-btn');
+      const input = document.getElementById('chat-text');
+      const messages = document.getElementById('chat-messages');
+  
+      async function sendMessage() {
+        const text = input.value.trim();
+        if (!text) return;
+  
+        // Add user message
+        messages.innerHTML += `<div class="message user">${text}</div>`;
+        input.value = "";
+  
+        try {
+          // Call your n8n webhook (update with your public URL!)
+          const res = await fetch("https://n8n.manuelcorreia.site/webhook/b4c9bc5f-9adb-47a2-b32a-7210f1394659/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: text })
+          });
+          const data = await res.json();
+  
+          // Show bot response
+          messages.innerHTML += `<div class="message bot">${data.reply || "No response"}</div>`;
+          messages.scrollTop = messages.scrollHeight;
+        } catch (err) {
+          messages.innerHTML += `<div class="message bot">⚠️ Error: ${err.message}</div>`;
+        }
+      }
+  
+      sendBtn.addEventListener('click', sendMessage);
+      input.addEventListener('keypress', (e) => {
+        if (e.key === "Enter") sendMessage();
+      });
+    </script>
+    
   </body>
 </html>
