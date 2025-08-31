@@ -101,12 +101,12 @@ const ChatBot = () => {
   return (
     <>
       <div id="chat-button">💬</div>
-      <div id="chat-box" style={{ display: 'none' }}>
+      <div id="chat-box" style={{ display: 'none' }} className="chat-container">
         <div id="chat-header">Chat com TARS</div>
         <div id="chat-messages"></div>
         <div id="chat-input-container">
           <input id="chat-input" type="text" placeholder="Digite sua mensagem..." />
-          <button id="chat-send">Enviar</button>
+          <button id="chat-send">➤</button>
         </div>
       </div>
     </>
