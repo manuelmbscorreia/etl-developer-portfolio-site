@@ -11,6 +11,8 @@ const ChatBot = () => {
       const msg = chatInput?.value.trim();
       if (!msg || !chatMessages) return;
 
+      console.log('Enviando mensagem:', msg, 'para:', N8N_WEBHOOK_URL);
+
       // Mostra mensagem do utilizador
       const userMsg = document.createElement("p");
       userMsg.textContent = msg;
@@ -25,24 +27,36 @@ const ChatBot = () => {
         // Envia para o webhook
         const response = await fetch(N8N_WEBHOOK_URL, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
           body: JSON.stringify({ message: msg })
         });
 
+        console.log('Resposta do webhook:', response.status, response.statusText);
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
         const data = await response.json();
+        console.log('Dados recebidos:', data);
 
         // Mostra resposta do bot
         const botMsg = document.createElement("p");
-        botMsg.textContent = data.reply || JSON.stringify(data);
+        botMsg.textContent = data.reply || data.message || JSON.stringify(data);
         botMsg.className = "bot";
         chatMessages.appendChild(botMsg);
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
       } catch (error) {
+        console.error('Erro no chat:', error);
         const errMsg = document.createElement("p");
-        errMsg.textContent = "⚠️ Erro ao contactar o bot.";
+        errMsg.textContent = `⚠️ Erro ao contactar o bot: ${error.message}`;
         errMsg.style.color = "red";
         chatMessages.appendChild(errMsg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
       }
     };
 
@@ -54,7 +68,19 @@ const ChatBot = () => {
 
     if (chatBtn && chatBox) {
       chatBtn.onclick = () => {
-        chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "flex" : "none";
+        const isVisible = chatBox.style.display === "flex";
+        chatBox.style.display = isVisible ? "none" : "flex";
+        
+        // Adicionar mensagem inicial se for a primeira vez
+        if (!isVisible) {
+          const chatMessages = document.getElementById("chat-messages");
+          if (chatMessages && chatMessages.children.length === 0) {
+            const welcomeMsg = document.createElement("p");
+            welcomeMsg.textContent = "Hi there! 👋 My name is TARS, what question do you have about Manuel's career?";
+            welcomeMsg.className = "bot";
+            chatMessages.appendChild(welcomeMsg);
+          }
+        }
       };
     }
 
@@ -64,7 +90,10 @@ const ChatBot = () => {
 
     if (chatInput) {
       chatInput.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") sendMessage();
+        if (e.key === "Enter") {
+          e.preventDefault();
+          sendMessage();
+        }
       });
     }
   }, []);
@@ -72,7 +101,7 @@ const ChatBot = () => {
   return (
     <>
       <div id="chat-button">💬</div>
-      <div id="chat-box">
+      <div id="chat-box" style={{ display: 'none' }}>
         <div id="chat-header">Chat com TARS</div>
         <div id="chat-messages"></div>
         <div id="chat-input-container">
