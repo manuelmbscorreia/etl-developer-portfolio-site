@@ -39,12 +39,12 @@ const ChatBot = () => {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
 
-        const data = await response.json();
-        console.log('Dados recebidos:', data);
+        const text = await response.text();
+        console.log('Dados recebidos:', text);
 
         // Mostra resposta do bot
         const botMsg = document.createElement("div");
-        botMsg.textContent = data.reply || data.message || JSON.stringify(data);
+        botMsg.textContent = text;
         botMsg.className = "chat-message-bot";
         chatMessages.appendChild(botMsg);
         chatMessages.scrollTop = chatMessages.scrollHeight;
