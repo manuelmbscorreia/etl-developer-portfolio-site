@@ -41,7 +41,7 @@ const ChatBot = () => {
         const data = await response.json();
         
         // Extrai o texto da resposta
-        const botResponse = data.text || data.message || "Sorry, I didn't understand that.";
+        const botResponse = data.text || data.message || data.response || data.answer || data.output || "Hello! How can I help?";
         addMessage(botResponse, 'bot');
 
       } catch (error) {
