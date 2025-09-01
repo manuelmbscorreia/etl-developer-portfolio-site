@@ -26,10 +26,7 @@ const ChatBot = () => {
         // Envia para o webhook
         const response = await fetch(N8N_WEBHOOK_URL, {
           method: "POST",
-          headers: { 
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ message: msg })
         });
 
