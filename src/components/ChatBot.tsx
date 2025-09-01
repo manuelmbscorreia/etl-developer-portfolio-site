@@ -6,18 +6,17 @@ const ChatBot = () => {
   React.useEffect(() => {
     // Função para enviar mensagem
     const sendMessage = async () => {
-      const chatInput = document.getElementById("chat-input") as HTMLInputElement;
-      const chatMessages = document.getElementById("chat-messages");
+      const chatInput = document.querySelector(".chat-input") as HTMLInputElement;
+      const chatMessages = document.querySelector(".chat-messages");
       const msg = chatInput?.value.trim();
       if (!msg || !chatMessages) return;
 
       console.log('Enviando mensagem:', msg, 'para:', N8N_WEBHOOK_URL);
 
       // Mostra mensagem do utilizador
-      const userMsg = document.createElement("p");
+      const userMsg = document.createElement("div");
       userMsg.textContent = msg;
-      userMsg.className = "user";
-      userMsg.style.alignSelf = "flex-end";
+      userMsg.className = "chat-message-user";
       chatMessages.appendChild(userMsg);
 
       chatInput.value = "";
@@ -44,27 +43,27 @@ const ChatBot = () => {
         console.log('Dados recebidos:', data);
 
         // Mostra resposta do bot
-        const botMsg = document.createElement("p");
+        const botMsg = document.createElement("div");
         botMsg.textContent = data.reply || data.message || JSON.stringify(data);
-        botMsg.className = "bot";
+        botMsg.className = "chat-message-bot";
         chatMessages.appendChild(botMsg);
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
       } catch (error) {
         console.error('Erro no chat:', error);
-        const errMsg = document.createElement("p");
+        const errMsg = document.createElement("div");
         errMsg.textContent = `⚠️ Erro ao contactar o bot: ${error.message}`;
-        errMsg.style.color = "red";
+        errMsg.className = "chat-message-error";
         chatMessages.appendChild(errMsg);
         chatMessages.scrollTop = chatMessages.scrollHeight;
       }
     };
 
     // Event listeners
-    const chatBtn = document.getElementById("chat-button");
-    const chatBox = document.getElementById("chat-box");
-    const chatSend = document.getElementById("chat-send");
-    const chatInput = document.getElementById("chat-input");
+    const chatBtn = document.querySelector(".chat-button") as HTMLElement;
+    const chatBox = document.querySelector(".chat-box") as HTMLElement;
+    const chatSend = document.querySelector(".chat-send-btn") as HTMLElement;
+    const chatInput = document.querySelector(".chat-input") as HTMLInputElement;
 
     if (chatBtn && chatBox) {
       chatBtn.onclick = () => {
@@ -73,11 +72,11 @@ const ChatBot = () => {
         
         // Adicionar mensagem inicial se for a primeira vez
         if (!isVisible) {
-          const chatMessages = document.getElementById("chat-messages");
+          const chatMessages = document.querySelector(".chat-messages");
           if (chatMessages && chatMessages.children.length === 0) {
-            const welcomeMsg = document.createElement("p");
+            const welcomeMsg = document.createElement("div");
             welcomeMsg.textContent = "Hi there! 👋 My name is TARS, what question do you have about Manuel's career?";
-            welcomeMsg.className = "bot";
+            welcomeMsg.className = "chat-message-bot";
             chatMessages.appendChild(welcomeMsg);
           }
         }
@@ -89,7 +88,7 @@ const ChatBot = () => {
     }
 
     if (chatInput) {
-      chatInput.addEventListener("keypress", (e) => {
+      chatInput.addEventListener("keypress", (e: KeyboardEvent) => {
         if (e.key === "Enter") {
           e.preventDefault();
           sendMessage();
@@ -100,13 +99,13 @@ const ChatBot = () => {
 
   return (
     <>
-      <div id="chat-button">💬</div>
-      <div id="chat-box" style={{ display: 'none' }} className="chat-container">
-        <div id="chat-header">Chat com TARS</div>
-        <div id="chat-messages"></div>
-        <div id="chat-input-container">
-          <input id="chat-input" type="text" placeholder="Digite sua mensagem..." />
-          <button id="chat-send">➤</button>
+      <div className="chat-button">💬</div>
+      <div className="chat-box" style={{ display: 'none' }}>
+        <div className="chat-header">Chat com TARS</div>
+        <div className="chat-messages"></div>
+        <div className="chat-input-container">
+          <input className="chat-input" type="text" placeholder="Digite sua mensagem..." />
+          <button className="chat-send-btn">➤</button>
         </div>
       </div>
     </>
