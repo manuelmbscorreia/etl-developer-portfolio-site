@@ -1,6 +1,6 @@
 import React from 'react';
 
-const N8N_WEBHOOK_URL = 'https://n8n.manuelcorreia.site/webhook/866d8928-3972-4c95-918c-3a2bae3607f0/chat';
+const N8N_WEBHOOK_URL = 'https://n8n.manuelcorreia.site/webhook/43522c0e-a65e-4392-ba91-9aad1f29866d';
 
 const ChatBot = () => {
   React.useEffect(() => {
