@@ -34,7 +34,10 @@ const ChatBot = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            message: message // apenas a mensagem - sem metadata
+            message: message,
+            system: "Friendly AI assistant having casual conversation",
+            style: "chat",
+            temperature: 0.8
           })
         });
 
