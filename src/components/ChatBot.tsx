@@ -38,6 +38,10 @@ const ChatBot = () => {
           },
           body: JSON.stringify({
             message: message,
+            system: "Friendly AI assistant having casual conversation",
+            style: "chat",
+            temperature: 0.8
+          })
         });
 
         const data = await response.json();
