@@ -26,6 +26,9 @@ const ChatBot = () => {
       addMessage(message, 'user');
       chatInput.value = '';
 
+      // Adiciona indicador de que está a escrever
+      addMessage("💭 A pensar...", 'bot');
+
       try {
         // Envia para o webhook
         const response = await fetch(N8N_WEBHOOK_URL, {
@@ -35,10 +38,19 @@ const ChatBot = () => {
           },
           body: JSON.stringify({
             message: message,
+            system: "Friendly AI assistant having casual conversation",
+            style: "chat",
+            temperature: 0.8
           })
         });
 
         const data = await response.json();
+        
+        // Remover o "A pensar..." 
+        const chatMessages = document.querySelector(".chat-messages");
+        if (chatMessages && chatMessages.lastChild) {
+          chatMessages.removeChild(chatMessages.lastChild);
+        }
         
         // Extrai o texto da resposta
         const botResponse = data.text || data.message || data.response || data.answer || data.output || "Hello! How can I help?";
@@ -46,6 +58,11 @@ const ChatBot = () => {
 
       } catch (error) {
         console.error('Error:', error);
+        // Remover o "A pensar..." em caso de erro
+        const chatMessages = document.querySelector(".chat-messages");
+        if (chatMessages && chatMessages.lastChild) {
+          chatMessages.removeChild(chatMessages.lastChild);
+        }
         addMessage('Desculpe, ocorreu um erro. Tente novamente.', 'bot');
       }
     };
