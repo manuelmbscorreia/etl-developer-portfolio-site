@@ -35,12 +35,13 @@ const ChatBot = () => {
           method: "POST",
           headers: {
             'Content-Type': 'application/json',
-          },
+          }, 
           body: JSON.stringify({
             message: message,
+            text: message // Added this line - some webhooks expect 'text' field
           })
         });
-
+      
         const data = await response.json();
         
         // Debug: Log the entire response to see the structure
