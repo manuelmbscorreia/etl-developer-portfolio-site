@@ -43,14 +43,20 @@ const ChatBot = () => {
 
         const data = await response.json();
         
-        // Remover o "A pensar..." 
+        // Debug: Log the entire response to see the structure
+        console.log('N8N Response:', data);
+        
+        // Remover o "Thinking..." 
         const chatMessages = document.querySelector(".chat-messages");
         if (chatMessages && chatMessages.lastChild) {
           chatMessages.removeChild(chatMessages.lastChild);
         }
         
-        // Extrai o texto da resposta
-        const botResponse = data.text || data.message || data.response || data.answer || data.output || "Hello! How can I help?";
+        // Extrai o texto da resposta - try multiple possible fields
+        const botResponse = data.text || data.message || data.response || data.answer || data.output || data.reply || 
+                           (typeof data === 'string' ? data : null) ||
+                           (data.data && (data.data.text || data.data.message || data.data.response)) ||
+                           "Hello! How can I help?";
         addMessage(botResponse, 'bot');
 
       } catch (error) {
