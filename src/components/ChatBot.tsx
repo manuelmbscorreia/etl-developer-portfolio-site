@@ -27,7 +27,7 @@ const ChatBot = () => {
       chatInput.value = '';
 
       // Adiciona indicador de que está a escrever
-      addMessage("💭 A pensar...", 'bot');
+      addMessage("💭 Thinking...", 'bot');
 
       try {
         // Envia para o webhook
