@@ -54,10 +54,7 @@ const ChatBot = () => {
         }
         
         // Extrai o texto da resposta - try multiple possible fields
-        const botResponse = data.text || data.message || data.response || data.answer || data.output || data.reply || 
-                           (typeof data === 'string' ? data : null) ||
-                           (data.data && (data.data.text || data.data.message || data.data.response)) ||
-                           "Hello! How can I help?";
+        const botResponse = data.response || data.text || data.message || data.output || "Hello! How can I help?";
         addMessage(botResponse, 'bot');
 
       } catch (error) {
