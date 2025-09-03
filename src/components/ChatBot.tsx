@@ -37,8 +37,7 @@ const ChatBot = () => {
             'Content-Type': 'application/json',
           }, 
           body: JSON.stringify({
-            message: message,
-            text: message // Added this line - some webhooks expect 'text' field
+            chatInput: message
           })
         });
       
